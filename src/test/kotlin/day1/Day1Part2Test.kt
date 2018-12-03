@@ -8,7 +8,7 @@ class Day1Part2Test {
 
     private fun solve(input: List<Int>): Int {
         val found = mutableSetOf(0)
-        var acc: Int = 0
+        var acc = 0
         while (true) {
             input.map {
                 acc += it

@@ -8,12 +8,11 @@ class Day2Part2Test {
 
     private fun countDifferences(a: String, b: String) = a.indices.count { a[it] != b[it] }
 
-    // full join - slightly suboptimal :)
     private fun findMatching(input: List<String>): Pair<String, String> {
-        input.map { a ->
-            input.map { b ->
-                if (countDifferences(a, b) == 1) {
-                    return Pair(a, b)
+        input.indices.forEach { a ->
+            ((a+1) until input.size).forEach { b ->
+                if (countDifferences(input[a], input[b]) == 1) {
+                    return Pair(input[a], input[b])
                 }
             }
         }
